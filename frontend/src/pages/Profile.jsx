@@ -17,7 +17,7 @@ function Profile() {
       <h1>Profile page for user {id}</h1>
       <ProfilePreview
         username="evans_jpeg"
-        profileImage="https://via.placeholder.com/150"
+        profileImage="https://placehold.co/300"
         bio="pixel artist, nostalgia core"
       />
       <h3>Friends</h3>

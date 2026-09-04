@@ -1,10 +1,12 @@
+//our backend tools
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors()); //lets frontend (different port) talk to this server
+app.use(express.json()); //lets us read JSON data sent in requests
 
+//fake "sign in" endpoint - no real database check yet, just returns dummy data
 app.post('/signin', (req, res) => {
   res.json({
     success: true,
@@ -12,6 +14,7 @@ app.post('/signin', (req, res) => {
   });
 });
 
+//fake "sign up" endpoint - same idea, just echoes back what was sent
 app.post('/signup', (req, res) => {
   res.json({
     success: true,
@@ -19,6 +22,7 @@ app.post('/signup', (req, res) => {
   });
 });
 
+//start the server on port 3000
 app.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
 });
